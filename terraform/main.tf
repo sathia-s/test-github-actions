@@ -5,10 +5,10 @@ terraform {
     }
   }
 
-  backend "s3" {
-    region = "us-west-2"
-    key    = "ivs-inspector-tfstate"
-  }
+  # backend "s3" {
+  #   region = "us-west-2"
+  #   key    = "ivs-inspector-tfstate"
+  # }
 }
 
 provider "aws" {
