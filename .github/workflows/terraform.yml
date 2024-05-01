@@ -12,16 +12,16 @@ on: workflow_dispatch
   #   paths:
   #   - terraform/**
 
-env: 
-  TF_LOG: INFO
-  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE}}
 
 jobs:
   terraform:
     name: "Terraform Infrastructure Change Management"
     runs-on: ubuntu-latest
+    env: 
+      TF_LOG: INFO
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE}}
     defaults:
       run:
         shell: bash
